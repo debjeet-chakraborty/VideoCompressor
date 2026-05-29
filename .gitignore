@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.packager-venv/
+
+# Build outputs
+build/
+dist/
+*.spec
+bin/
+
+# Runtime logs and local files
+*.log
+app.log
+test-input.mp4
+test-output.mp4
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

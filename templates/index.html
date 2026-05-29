@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline Video Compressor</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>Offline Video Compressor</h1>
+            <p>Compress large local videos directly on this machine.</p>
+          </div>
+          <span class="status-pill" id="connectionStatus">Local</span>
+        </header>
+
+        <section class="panel file-panel">
+          <div class="field-group">
+            <label for="inputPath">Source video</label>
+            <div class="path-row">
+              <input id="inputPath" type="text" placeholder="Choose a local video file" />
+              <button id="chooseInput" type="button" class="icon-button" title="Choose source video">
+                <span>Open</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="outputPath">Save as</label>
+            <div class="path-row">
+              <input id="outputPath" type="text" placeholder="Choose output destination" />
+              <button id="chooseOutput" type="button" class="icon-button" title="Choose output destination">
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="controls">
+          <div class="control-block">
+            <label for="qualityMode">Mode</label>
+            <select id="qualityMode">
+              <option value="balanced" selected>Balanced</option>
+              <option value="quality">Higher quality</option>
+              <option value="smallest">Smallest file</option>
+            </select>
+          </div>
+          <div class="control-block range-block">
+            <div class="range-label">
+              <label for="targetReduction">Target reduction</label>
+              <strong><span id="targetValue">75</span>%</strong>
+            </div>
+            <input id="targetReduction" type="range" min="50" max="90" value="75" step="5" />
+          </div>
+          <button id="startButton" type="button" class="primary-button">Compress</button>
+          <button id="cancelButton" type="button" class="secondary-button" disabled>Cancel</button>
+        </section>
+
+        <section class="progress-section">
+          <div class="progress-header">
+            <div>
+              <span id="stage">Ready</span>
+              <strong id="progressText">0%</strong>
+            </div>
+            <p id="message">Select a file and destination to begin.</p>
+          </div>
+          <div class="progress-track" aria-label="Compression progress">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </section>
+
+        <section class="results" id="results" hidden>
+          <div>
+            <span>Original</span>
+            <strong id="originalSize">-</strong>
+          </div>
+          <div>
+            <span>Compressed</span>
+            <strong id="outputSize">-</strong>
+          </div>
+          <div>
+            <span>Reduction</span>
+            <strong id="reduction">-</strong>
+          </div>
+        </section>
+
+        <pre id="errorBox" class="error-box" hidden></pre>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
