@@ -17,7 +17,7 @@ A local-only web app for compressing large video files without uploading them an
 
 ## Download And Run
 
-For non-technical users, download a ready build from the GitHub release or workflow artifacts.
+Download the build for your operating system from the Releases page.
 
 Then double-click:
 
@@ -29,15 +29,13 @@ No Python, ffmpeg, terminal, or internet connection is needed for the packaged a
 
 ## Run From Source
 
-Use this if you are a developer or want to test the code directly.
+Use this for development or local testing.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/VideoCompressor.git
+git clone https://github.com/debjeet-chakraborty/VideoCompressor.git
 cd VideoCompressor
 python3 app.py
 ```
-
-Replace `YOUR_USERNAME` with the GitHub account or organization that hosts the repo.
 
 Open `http://127.0.0.1:8765` if the browser does not open automatically.
 
@@ -84,25 +82,6 @@ The build script automatically:
 - bundles the UI, Python runtime, and ffmpeg engine,
 - writes the final app into `dist/`.
 
-## GitHub Releases
-
-This repo includes a GitHub Actions workflow at `.github/workflows/build.yml`.
-
-When you push a tag like:
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-GitHub Actions builds artifacts for:
-
-- Windows
-- macOS
-- Linux
-
-You can attach those artifacts to a GitHub Release so users can download without building anything.
-
 ## Compression Notes
 
 - The app prefers H.265 for better compression.
@@ -123,10 +102,6 @@ The app is offline-first:
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Publishing This Repo
-
-See [GITHUB_SETUP.md](GITHUB_SETUP.md).
 
 ## License
 
